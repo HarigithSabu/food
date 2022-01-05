@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  body{
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color: whitesmoke;
+  }
+  .container {
+      width: 50%;
+      padding: 5px;
+    background-color: rgb(221, 31, 164);
+  }
+
+  input[type=text], input[type=password], textarea {
+    width: 75%;
+    padding: 15px;
+    margin: 10px 0 22px 0;
+
+
+    background: #f1f1f1;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: rgb(219, 200, 164);
+    outline: none;
+  }
+   div {
+              padding: 10px 0;
+           }
+  hr {
+    border: 1px solid #f10d0d;
+    margin-bottom: 25px;
+  }
+  .registerbtn {
+    background-color: #4CAF50;
+    color: rgb(236, 28, 28);
+    padding: 10px 20px;
+    margin: 8px 0;
+
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+  }
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  </style>
+
+
+<form action="login" method="post">
+  {% csrf_token %}
+  <center>
+  <div class="container">
+     <h1> LOGIN</h1>
+    <hr>
+    <label><b> Username: <b></label>
+  <input type="text" name="username" placeholder="Username">
+  <br>
+  <label for="psw"><b>Password</b></label>
+  <input type="password" name="password" placeholder="Enter Password">
+  <br>
+  <input type="submit" value="LOGIN" class="registerbtn">
+  </center>
+  </form>
+
+  {% endblock %}
